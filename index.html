@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>REIGN TECH STORE</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">REIGN TECH</div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#deals">Deals</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <h1>Welcome to REIGN TECH</h1>
+        <p>Your one-stop shop for premium TECH</p>
+        <a href="#shop"><button class="btn">Browse Products</button></a>
+    </section>
+
+    <!-- SHOP -->
+    <section id="shop">
+        <h2>Featured Products</h2>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="webapp.jpg">
+                <h3>WEB APP DEVELOPMENT</h3>
+                <button class="preview-btn" data-video="https://www.youtube.com/embed/ysEN5RaKOlA">Preview</button>
+            </div>
+
+            <div class="product-card">
+                <img src="mobile2.jpg">
+                <h3>MOBILE APP DEVELOPMENT</h3>
+                <button class="preview-btn" data-video="https://www.youtube.com/embed/5jv2S7BjUf8">Preview</button>
+            </div>
+
+            <div class="product-card">
+                <img src="desktopapp.jpg">
+                <h3>DESKTOP APPLICATIONS</h3>
+                <button class="preview-btn" data-video="https://www.youtube.com/embed/v0NeFuIwGpc">Preview</button>
+            </div>
+
+            <div class="product-card">
+                <img src="ss.jpg">
+                <h3>SOFTWARE SALES AND SUBSCRIPTION</h3>
+                <button class="preview-btn" data-video="https://www.youtube.com/embed/DZQt_9dCL04">Preview</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DEALS -->
+    <section id="deals" style="background:#f7f7f7;">
+        <h2>Special Deals</h2>
+        <p>Coming Soon… Stay tuned for massive discounts!</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@reigntech.com</p>
+        <p>Phone: +234 801 234 5678</p>
+    </section>
+
+    <!-- VIDEO MODAL -->
+    <div id="videoModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 REIGN TECH. All Rights Reserved.</p>
+    </footer>
+
+
+
+</body>
+
+</html>
