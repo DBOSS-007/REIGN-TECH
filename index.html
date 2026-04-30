@@ -1,97 +1,318 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>REIGN TECH STORE</title>
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REIGN-TECH | Software Development & Tech Training</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 </head>
+<body class="bg-white text-gray-800">
 
-<body>
-
-    <header>
-        <nav class="navbar">
-            <div class="logo">REIGN TECH</div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#deals">Deals</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">☰</div>
-        </nav>
-    </header>
-
-    <!-- HOME -->
-    <section id="home" class="hero">
-        <h1>Welcome to REIGN TECH</h1>
-        <p>Your one-stop shop for premium TECH</p>
-        <a href="#shop"><button class="btn">Browse Products</button></a>
-    </section>
-
-    <!-- SHOP -->
-    <section id="shop">
-        <h2>Featured Products</h2>
-
-        <div class="product-grid">
-
-            <div class="product-card">
-                <img src="webapp.jpg">
-                <h3>WEB APP DEVELOPMENT</h3>
-                <button class="preview-btn" data-video="https://www.youtube.com/embed/ysEN5RaKOlA">Preview</button>
-            </div>
-
-            <div class="product-card">
-                <img src="mobile2.jpg">
-                <h3>MOBILE APP DEVELOPMENT</h3>
-                <button class="preview-btn" data-video="https://www.youtube.com/embed/5jv2S7BjUf8">Preview</button>
-            </div>
-
-            <div class="product-card">
-                <img src="desktopapp.jpg">
-                <h3>DESKTOP APPLICATIONS</h3>
-                <button class="preview-btn" data-video="https://www.youtube.com/embed/v0NeFuIwGpc">Preview</button>
-            </div>
-
-            <div class="product-card">
-                <img src="ss.jpg">
-                <h3>SOFTWARE SALES AND SUBSCRIPTION</h3>
-                <button class="preview-btn" data-video="https://www.youtube.com/embed/DZQt_9dCL04">Preview</button>
-            </div>
-
+  <!-- HEADER -->
+  <header class="bg-black text-white sticky top-0 z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-5">
+      <div class="flex items-center justify-between">
+        <div class="text-3xl font-bold tracking-tighter">
+          REIGN<span class="text-blue-500">-</span>TECH
         </div>
-    </section>
 
-    <!-- DEALS -->
-    <section id="deals" style="background:#f7f7f7;">
-        <h2>Special Deals</h2>
-        <p>Coming Soon… Stay tuned for massive discounts!</p>
-    </section>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex items-center gap-8 text-sm font-medium">
+          <li><a href="#home" class="nav-link hover:text-blue-400">Home</a></li>
+          <li><a href="#about" class="nav-link hover:text-blue-400">About</a></li>
+          <li><a href="#services" class="nav-link hover:text-blue-400">Services</a></li>
+          
+          <!-- Courses Dropdown -->
+          <li class="relative group">
+            <a href="#courses" class="nav-link hover:text-blue-400 flex items-center gap-1">
+              Courses <i class="fas fa-chevron-down text-xs"></i>
+            </a>
+            <div class="absolute hidden group-hover:block bg-black border border-gray-700 rounded-xl mt-2 py-4 w-64 shadow-2xl">
+              <a href="#courses" class="block px-6 py-3 hover:bg-gray-900">Full Stack Python Programming</a>
+              <a href="#courses" class="block px-6 py-3 hover:bg-gray-900">Data Analysis</a>
+            </div>
+          </li>
 
-    <!-- CONTACT -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: support@reigntech.com</p>
-        <p>Phone: +234 801 234 5678</p>
-    </section>
+          <li><a href="#projects" class="nav-link hover:text-blue-400">Projects</a></li>
+          <li><a href="#testimonials" class="nav-link hover:text-blue-400">Testimonials</a></li>
+          <li><a href="#contact" class="nav-link hover:text-blue-400">Contact</a></li>
+        </ul>
 
-    <!-- VIDEO MODAL -->
-    <div id="videoModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-        </div>
+        <a href="#contact" class="hidden md:block bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-full text-sm font-semibold transition">
+          Get In Touch
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="md:hidden text-3xl">
+          ☰
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden mt-6 bg-black border-t border-gray-800 py-6">
+        <ul class="flex flex-col gap-6 text-center text-lg">
+          <li><a href="#home" class="hover:text-blue-400">Home</a></li>
+          <li><a href="#about" class="hover:text-blue-400">About</a></li>
+          <li><a href="#services" class="hover:text-blue-400">Services</a></li>
+          <li><a href="#courses" class="hover:text-blue-400">Courses</a></li>
+          <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
+          <li><a href="#testimonials" class="hover:text-blue-400">Testimonials</a></li>
+          <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="hero-bg h-screen flex items-center text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+        Building Tomorrow's <span class="text-blue-400">Digital Solutions</span>
+      </h1>
+      <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-10">
+        We develop powerful software and train the next generation of tech professionals.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 px-10 py-4 rounded-2xl font-semibold text-lg transition">
+          Get Started
+        </a>
+        <a href="#courses" class="border border-white hover:bg-white hover:text-black px-10 py-4 rounded-2xl font-semibold text-lg transition">
+          Explore Courses
+        </a>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        <p>© 2025 REIGN TECH. All Rights Reserved.</p>
-    </footer>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">About REIGN-TECH</h2>
+          <p class="text-lg text-gray-600 leading-relaxed">
+            REIGN-TECH is a forward-thinking technology company specializing in custom software development and 
+            high-impact tech education. We combine innovation with practical knowledge to deliver solutions that drive business growth.
+          </p>
+          <p class="text-lg text-gray-600 leading-relaxed mt-6">
+            Our mission is to empower individuals and businesses through cutting-edge software solutions and 
+            industry-relevant training in Full Stack Python Development and Data Analysis.
+          </p>
+        </div>
+        <div class="bg-gray-100 rounded-3xl p-10">
+          <div class="grid grid-cols-2 gap-8 text-center">
+            <div>
+              <h3 class="text-4xl font-bold text-blue-600">50+</h3>
+              <p class="text-gray-500">Projects Delivered</p>
+            </div>
+            <div>
+              <h3 class="text-4xl font-bold text-blue-600">200+</h3>
+              <p class="text-gray-500">Students Trained</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- SERVICES -->
+  <section id="services" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Services</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-3xl card-hover shadow-lg">
+          <i class="fas fa-laptop-code text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Custom Software Development</h3>
+          <p class="text-gray-600">Tailored software solutions designed to solve your unique business challenges.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl card-hover shadow-lg">
+          <i class="fas fa-globe text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Web Application Development</h3>
+          <p class="text-gray-600">Modern, scalable, and secure web applications using the latest technologies.</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl card-hover shadow-lg">
+          <i class="fas fa-cogs text-4xl text-blue-600 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-3">Business Automation</h3>
+          <p class="text-gray-600">Streamline operations and increase efficiency with intelligent automation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- COURSES -->
+  <section id="courses" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Our Courses</h2>
+      <div class="grid md:grid-cols-2 gap-10">
+        
+        <!-- Full Stack Python -->
+        <div class="border border-gray-200 rounded-3xl p-10 card-hover">
+          <h3 class="text-3xl font-bold mb-4">Full Stack Python Programming</h3>
+          <p class="text-gray-600 mb-8">
+            Master Python, Flask/Django, frontend technologies, databases, APIs, authentication, and deployment. 
+            Build real-world projects from scratch.
+          </p>
+          <button onclick="alert('Enrollment coming soon!')" 
+                  class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition">
+            Enroll Now
+          </button>
+        </div>
 
+        <!-- Data Analysis -->
+        <div class="border border-gray-200 rounded-3xl p-10 card-hover">
+          <h3 class="text-3xl font-bold mb-4">Data Analysis</h3>
+          <p class="text-gray-600 mb-8">
+            Learn Excel, Python for Data Analysis (Pandas, NumPy), data cleaning, visualization, dashboards, 
+            and how to derive business insights.
+          </p>
+          <button onclick="alert('Enrollment coming soon!')" 
+                  class="bg-blue-600 text-white px-8 py-4 rounded-2xl font-semibold hover:bg-blue-700 transition">
+            Enroll Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-24 bg-black text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Why Choose REIGN-TECH?</h2>
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="text-center">
+          <i class="fas fa-project-diagram text-5xl text-blue-500 mb-6"></i>
+          <h4 class="text-2xl font-semibold mb-3">Project-Based Learning</h4>
+          <p class="text-gray-400">Build real applications, not just theory.</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-users text-5xl text-blue-500 mb-6"></i>
+          <h4 class="text-2xl font-semibold mb-3">Expert Mentorship</h4>
+          <p class="text-gray-400">Learn from experienced developers and data professionals.</p>
+        </div>
+        <div class="text-center">
+          <i class="fas fa-briefcase text-5xl text-blue-500 mb-6"></i>
+          <h4 class="text-2xl font-semibold mb-3">Career Focused</h4>
+          <p class="text-gray-400">Skills that employers actually need.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Featured Projects</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl overflow-hidden card-hover">
+          <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600"></div>
+          <div class="p-6">
+            <h4 class="font-semibold text-xl mb-2">Business Management System</h4>
+            <p class="text-gray-600 text-sm">Full-stack inventory and CRM solution</p>
+          </div>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">What Our Students Say</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 p-8 rounded-3xl">
+          <p class="italic">"The Full Stack Python course was life-changing. I built and deployed my first web app in 8 weeks!"</p>
+          <div class="mt-6 font-semibold">- Chinedu Okoro</div>
+        </div>
+        <!-- Add more testimonials -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-blue-600 text-white text-center">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-4xl font-bold mb-6">Ready to Start Your Tech Journey?</h2>
+      <p class="text-xl mb-10">Join our next cohort or request a custom software solution today.</p>
+      <a href="#contact" class="inline-block bg-white text-blue-600 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-gray-100 transition">
+        Get Started Now
+      </a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-16">Get In Touch</h2>
+      <div class="grid md:grid-cols-2 gap-16">
+        <div>
+          <form class="space-y-6">
+            <input type="text" placeholder="Your Name" class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500">
+            <input type="email" placeholder="Email Address" class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500">
+            <input type="tel" placeholder="Phone Number" class="w-full px-6 py-4 border border-gray-300 rounded-2xl focus:outline-none focus:border-blue-500">
+            <textarea placeholder="Your Message" rows="6" class="w-full px-6 py-4 border border-gray-300 rounded-3xl focus:outline-none focus:border-blue-500"></textarea>
+            <button type="submit" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-semibold hover:bg-blue-700 transition">
+              Send Message
+            </button>
+          </form>
+        </div>
+        <div class="space-y-8">
+          <div>
+            <h4 class="font-semibold text-lg">Email</h4>
+            <p class="text-blue-600">info@reigntech.com.ng</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Phone</h4>
+            <p class="text-blue-600">+234 8068027385</p>
+          </div>
+          <div>
+            <h4 class="font-semibold text-lg">Location</h4>
+            <p class="text-gray-600">Abuja, FCT, Nigeria</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-black text-white py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h3 class="text-2xl font-bold mb-4">REIGN-TECH</h3>
+          <p class="text-gray-400">Empowering businesses and individuals through technology.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Quick Links</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white">Home</a></li>
+            <li><a href="#" class="hover:text-white">About</a></li>
+            <li><a href="#" class="hover:text-white">Services</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Courses</h4>
+          <ul class="space-y-2 text-gray-400">
+            <li><a href="#" class="hover:text-white">Full Stack Python</a></li>
+            <li><a href="#" class="hover:text-white">Data Analysis</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-4">Connect</h4>
+          <div class="flex gap-6 text-2xl">
+            <i class="fab fa-linkedin hover:text-blue-400 cursor-pointer"></i>
+            <i class="fab fa-twitter hover:text-blue-400 cursor-pointer"></i>
+            <i class="fab fa-instagram hover:text-blue-400 cursor-pointer"></i>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
+        © 2026 REIGN-TECH. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </body>
-
+ <script src="script.js"></script>
 </html>
